@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Arjay P. Evangelista — Professional Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B3A5C;
+  --blue:#2C7BB6;
+  --sky:#C8DCF0;
+  --cream:#F7F9FC;
+  --white:#FFFFFF;
+  --gray:#6B7280;
+  --light:#E5EDF5;
+  --dark:#111827;
+  --accent:#2C5F8A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6;font-size:16px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,249,252,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--light);padding:0 2rem}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);text-decoration:none;letter-spacing:0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.82rem;font-weight:500;color:var(--gray);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--navy);position:relative;overflow:hidden;padding:6rem 2rem 4rem}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(44,127,182,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(44,127,182,0.08) 1px,transparent 1px);background-size:48px 48px}
+.hero-content{position:relative;text-align:center;max-width:720px}
+.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--sky);margin-bottom:1.5rem;opacity:0.8}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4rem);color:var(--white);line-height:1.15;margin-bottom:1rem}
+.hero-title{font-size:1rem;color:var(--sky);opacity:0.85;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
+.hero-badges{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;margin-bottom:3rem}
+.badge{font-size:0.75rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:99px;border:1px solid rgba(200,220,240,0.3);color:var(--sky);letter-spacing:0.04em}
+.hero-cta{display:inline-block;background:var(--blue);color:var(--white);text-decoration:none;font-size:0.85rem;font-weight:500;padding:0.75rem 2rem;border-radius:4px;letter-spacing:0.04em;transition:background 0.2s,transform 0.15s}
+.hero-cta:hover{background:#2268a0;transform:translateY(-1px)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(200,220,240,0.5);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(200,220,240,0.4),transparent)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.section-inner{max-width:860px;margin:0 auto}
+.section-label{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);margin-bottom:0.5rem}
+.section-divider{width:40px;height:2px;background:var(--blue);margin-bottom:2.5rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text{font-size:0.97rem;color:var(--gray);line-height:1.85}
+.about-text p{margin-bottom:1rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--white);border:1px solid var(--light);border-radius:8px;padding:1.25rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);display:block}
+.stat-label{font-size:0.75rem;color:var(--gray);letter-spacing:0.04em;line-height:1.4}
+
+/* EXPERIENCE TIMELINE */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--light)}
+.timeline-item{position:relative;margin-bottom:2.5rem}
+.timeline-item::before{content:'';position:absolute;left:-2.4rem;top:8px;width:9px;height:9px;border-radius:50%;background:var(--white);border:2px solid var(--blue)}
+.timeline-item:first-child::before{background:var(--blue)}
+.tl-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.4rem;flex-wrap:wrap}
+.tl-co{font-size:0.8rem;font-weight:500;color:var(--blue);letter-spacing:0.03em}
+.tl-date{font-size:0.75rem;color:var(--gray);background:var(--light);padding:0.15rem 0.6rem;border-radius:99px}
+.tl-title{font-size:1.02rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem}
+.tl-client{font-size:0.82rem;color:var(--gray);font-style:italic;margin-bottom:0.6rem}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:0.35rem}
+.tl-bullets li{font-size:0.88rem;color:var(--gray);padding-left:1.1rem;position:relative;line-height:1.6}
+.tl-bullets li::before{content:'—';position:absolute;left:0;color:var(--sky)}
+
+/* SKILLS */
+.skills-bg{background:var(--navy)}
+.skills-bg .section-title{color:var(--white)}
+.skills-bg .section-label{color:var(--sky)}
+.skills-bg .section-divider{background:var(--sky)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+.skill-card{background:rgba(255,255,255,0.05);border:1px solid rgba(200,220,240,0.15);border-radius:8px;padding:1.25rem}
+.skill-icon{font-size:1.4rem;margin-bottom:0.75rem;color:var(--sky)}
+.skill-name{font-size:0.85rem;font-weight:500;color:var(--white);margin-bottom:0.4rem}
+.skill-desc{font-size:0.78rem;color:rgba(200,220,240,0.65);line-height:1.55}
+
+/* EDUCATION */
+.edu-card{background:var(--white);border:1px solid var(--light);border-radius:8px;padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+.edu-icon{width:48px;height:48px;min-width:48px;border-radius:8px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--navy)}
+.edu-degree{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:0.25rem}
+.edu-school{font-size:0.9rem;color:var(--blue);margin-bottom:0.25rem}
+.edu-year{font-size:0.8rem;color:var(--gray)}
+
+/* CONTACT */
+.contact-bg{background:var(--navy)}
+.contact-bg .section-title{color:var(--white)}
+.contact-bg .section-label{color:var(--sky)}
+.contact-bg .section-divider{background:var(--sky)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2.5rem}
+.contact-card{background:rgba(255,255,255,0.05);border:1px solid rgba(200,220,240,0.15);border-radius:8px;padding:1.25rem;display:flex;align-items:center;gap:1rem}
+.contact-icon{width:40px;height:40px;border-radius:50%;background:rgba(44,127,182,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--sky)}
+.contact-lbl{font-size:0.72rem;color:rgba(200,220,240,0.55);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.2rem}
+.contact-val{font-size:0.9rem;color:var(--white)}
+.contact-note{text-align:center;font-size:0.85rem;color:rgba(200,220,240,0.55);max-width:480px;margin:0 auto}
+
+/* FOOTER */
+footer{background:#111827;padding:2rem;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.25);letter-spacing:0.05em}
+
+@media(max-width:640px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:0.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">Arjay P. Evangelista</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Professional Portfolio</p>
+    <h1 class="hero-name">Arjay P. Evangelista</h1>
+    <p class="hero-title">Customer Service Professional · Executive Assistant · Transaction Coordinator<br/>12+ years of delivering exceptional client experiences across BPO and remote industries.</p>
+    <div class="hero-badges">
+      <span class="badge">Customer Service</span>
+      <span class="badge">Executive Support</span>
+      <span class="badge">Real Estate Ops</span>
+      <span class="badge">Remote Work</span>
+      <span class="badge">Team Leadership</span>
+    </div>
+    <a class="hero-cta" href="#contact">Get in touch</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About me</p>
+    <h2 class="section-title">A decade of impact, one client at a time.</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a results-driven professional with over 12 years of progressive experience across customer service operations, executive assistance, and real estate transaction coordination. I thrive in fast-paced, high-stakes environments and consistently deliver beyond expectations.</p>
+        <p>From handling thousands of customer interactions on behalf of Amazon, T-Mobile, DoorDash, and Staples, to providing dedicated executive support for senior-level Keller Williams coaches, I bring a unique blend of operational excellence and people-first thinking to every role.</p>
+        <p>I'm equally effective in large BPO environments and independent remote settings — and I bring the same level of professionalism and attention to detail to both.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num">12+</span>
+          <span class="stat-label">Years of professional experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">7</span>
+          <span class="stat-label">Companies & clients served</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Years as Executive Assistant (remote)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">5+</span>
+          <span class="stat-num" style="font-size:1rem;font-family:Inter">Major brands supported</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--white)">
+  <div class="section-inner">
+    <p class="section-label">Career history</p>
+    <h2 class="section-title">Professional experience</h2>
+    <div class="section-divider"></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">Sutherland Philippines</span>
+          <span class="tl-date">Feb 2025 – May 2026</span>
+        </div>
+        <div class="tl-title">Team of Expert — T-Mobile</div>
+        <ul class="tl-bullets">
+          <li>Served as a subject-matter expert for T-Mobile subscribers, handling advanced technical and account inquiries.</li>
+          <li>Managed escalated cases and complex issues, maintaining high first-contact resolution rates.</li>
+          <li>Consistently exceeded KPIs including CSAT, Average Handle Time, and Quality Assurance scores.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">De Maria Homes, OH</span>
+          <span class="tl-date">Oct 2024 – Feb 2025</span>
+        </div>
+        <div class="tl-title">Transaction Coordinator</div>
+        <ul class="tl-bullets">
+          <li>Coordinated real estate transactions end-to-end from contract to closing, ensuring documentation accuracy and deadline compliance.</li>
+          <li>Served as the central point of contact between buyers, sellers, agents, lenders, and title companies.</li>
+          <li>Maintained transaction management systems and prepared progress reports for the brokerage team.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">TaskUs Philippines</span>
+          <span class="tl-date">Oct 2023 – Oct 2024</span>
+        </div>
+        <div class="tl-title">Customer Service Representative — DoorDash</div>
+        <ul class="tl-bullets">
+          <li>Resolved multi-channel inquiries from customers, dashers, and merchants for the DoorDash platform.</li>
+          <li>Handled order disputes, account concerns, and platform issues with accuracy and empathy.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">Cyberbacker (Remote)</span>
+          <span class="tl-date">Sep 2019 – Jun 2022</span>
+        </div>
+        <div class="tl-title">Executive Assistant</div>
+        <div class="tl-client">Clients: Emily Baker (MAPS Coach, Keller Williams) · John Vandergheynst (MAPS Head Coach, Keller Williams)</div>
+        <ul class="tl-bullets">
+          <li>Provided dedicated executive support to two senior KW MAPS coaches, managing calendars, communications, and daily workflows.</li>
+          <li>Coordinated coaching sessions, client follow-ups, and internal reporting to optimize executive productivity.</li>
+          <li>Maintained digital filing systems and email correspondence with high confidentiality.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">Sitel Philippines</span>
+          <span class="tl-date">Apr 2018 – Jul 2019</span>
+        </div>
+        <div class="tl-title">Customer Service Representative — Staples</div>
+        <ul class="tl-bullets">
+          <li>Delivered inbound support for Staples customers covering orders, returns, and product inquiries.</li>
+          <li>Maintained strong performance metrics in a high-volume contact center environment.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">Alorica</span>
+          <span class="tl-date">Apr 2017 – Jan 2018</span>
+        </div>
+        <div class="tl-title">Customer Service Representative</div>
+        <ul class="tl-bullets">
+          <li>Provided customer support across multiple client accounts with a focus on issue resolution and service quality.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-meta">
+          <span class="tl-co">Sutherland Philippines</span>
+          <span class="tl-date">Oct 2013 – Jan 2017</span>
+        </div>
+        <div class="tl-title">Customer Service Representative — Amazon</div>
+        <ul class="tl-bullets">
+          <li>Managed Amazon customer inquiries covering orders, returns, account support, and product information over a 3+ year tenure.</li>
+          <li>Consistently met performance benchmarks and contributed to team quality and satisfaction scores.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="section-inner">
+    <p class="section-label">What I bring</p>
+    <h2 class="section-title">Core competencies</h2>
+    <div class="section-divider"></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🎧</div>
+        <div class="skill-name">Customer Service</div>
+        <div class="skill-desc">Multichannel support, escalation handling, CSAT management, and first-contact resolution across major global brands.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🗂️</div>
+        <div class="skill-name">Executive Assistance</div>
+        <div class="skill-desc">Calendar management, email correspondence, scheduling, travel coordination, and confidential document handling.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🏠</div>
+        <div class="skill-name">Real Estate Operations</div>
+        <div class="skill-desc">Transaction coordination, contract management, deadline tracking, and multi-party liaison for real estate deals.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name">Remote Work</div>
+        <div class="skill-desc">Proven track record working independently across time zones using virtual collaboration and productivity tools.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">CRM & Ticketing</div>
+        <div class="skill-desc">Experienced with customer relationship management systems, ticketing platforms, and performance reporting dashboards.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤝</div>
+        <div class="skill-name">Stakeholder Communication</div>
+        <div class="skill-desc">Professional written and verbal communication with clients, executives, agents, lenders, and cross-functional teams.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label">Academic background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="section-divider"></div>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">Bachelor of Science in Computer Software Management</div>
+        <div class="edu-school">First Asian International Systems College</div>
+        <div class="edu-year">2011 – 2013 · Graduated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="section-inner">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Let's connect</h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="contact-lbl">Phone</div>
+          <div class="contact-val">+63 916 315 1135</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-lbl">Email</div>
+          <div class="contact-val">Mcjaps28@gmail.com</div>
+        </div>
+      </div>
+    </div>
+    <p class="contact-note">Available for full-time, part-time, and remote opportunities. Response within 24 hours.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Arjay P. Evangelista · All rights reserved
+</footer>
+
+</body>
+</html>
